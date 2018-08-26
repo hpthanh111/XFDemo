@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="XFDemo.Views.MainView">
+    <!--SelectionMode="None"-->
+    <!--<Image Source="{Binding Image}" />-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Name="MenuItem1"
+                      Order="Primary"
+                      Icon="ic_action_account_balance.png"
+                      Text="Item 1"
+                      Priority="0" />
+        
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+        <ListView Margin="10" SeparatorVisibility="Default"
+                  SeparatorColor="BlueViolet"
+            x:Name="lvDoctor" HasUnevenRows="True"
+                  ItemTapped="lvDoctor_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid VerticalOptions="Center"
+                              Padding="10,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="80"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <forms:CachedImage Source="{Binding Image}" 
+                                               Grid.Column="0"
+                                               Grid.RowSpan="2"
+                                               />
+                            <StackLayout Grid.Column="1"
+                                        Grid.ColumnSpan="2"
+                                         >
+                                    <Label Text="{Binding Name}" Grid.ColumnSpan="2" Grid.Row="0"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium" />
+                                
+                                    <Label Text="{Binding Title}" Grid.Column="1" Grid.Row="1"
+                                           FontAttributes="Italic"
+                                           />
+                                    <Button Text="..."
+                                            Grid.Column="2"
+                                            Grid.Row="1" >
+
+                                    </Button>
+                               
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfdemo="clr-namespace:XFDemo"
+             x:Class="XFDemo.TestPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30"
+                     Spacing="20">
+
+            <StackLayout.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="Android"
+                        Value="Gray" />
+                    <On Platform="iOS" 
+                        Value="Yellow"/>
+                    
+                </OnPlatform>
+            </StackLayout.BackgroundColor>
+            
+            <Label Text="Enter a Phoneword:" />
+            <Entry Placeholder="Number" BackgroundColor="GreenYellow"  />
+            <Button x:Name="btn1" Text="Transalte"/>
+            <Button x:Name="btn2" Text="Call" IsEnabled="true"/>
+            <DatePicker x:Name="cboNgay"  
+                        TextColor="Red"
+                        BackgroundColor="Pink"
+                        Format="dd/MM/yyyy"/>
+            <Picker x:Name="cboList" Title="Hello">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <xfdemo:MyView BackgroundColor="Cyan" />
+
+            <Picker Title="Select a monkey"
+                    ItemsSource="{Binding Monkeys}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedMonkey}" />
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

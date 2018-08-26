@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:form="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="XFDemo.Views.DoctorView">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="mnuSave"
+                     Order="Primary"
+                     Icon="icons32.png"
+                     Text="SAVE"
+                     Clicked="mnuSave_Clicked"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <!--UIColor.FromRGB (218, 255, 127);-->
+        <StackLayout Padding="20" Margin="10"
+                     BackgroundColor = "BlueViolet"
+                     Spacing="20"
+                     CompressedLayout.IsHeadless="True">
+            
+            <Entry x:Name="lblName"
+                   BackgroundColor="Bisque"
+                   FontAttributes="Bold"
+                   Text="{Binding Name, Mode=TwoWay}" 
+                   
+                   />
+            
+            <Label x:Name="lblTitle" Text="{Binding Title}" />
+            <Label x:Name="lblAddress"
+                   Text="{Binding Address}"/>
+
+            <Label x:Name="lblPhonenumber"
+                   Text="{Binding PhoneNumber}" />
+            
+            <form:CachedImage x:Name="imgHinh" 
+                              HeightRequest="80"
+                              Aspect="AspectFit"
+                              Source="{Binding Image}" />
+
+            <Button x:Name="btnCall"
+                    Clicked="btnCall_Clicked"
+                    />
+            <Label Text="Hello Xamarin"
+                   Rotation="{Binding Source={x:Reference slider},Path=Value}"
+                   TextColor="Aquamarine" />
+            <Slider x:Name="slider"
+                    Minimum="0"
+                    Maximum="360" />
+            <Button x:Name="btnTest"
+                     />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

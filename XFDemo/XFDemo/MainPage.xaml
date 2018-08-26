@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFDemo"
+             x:Class="XFDemo.MainPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Label Text="Hello Xamarin" 
+               Grid.Row="2"
+               Grid.Column="1"
+               />
+        <BoxView Grid.Row="0"
+                 Grid.Column="0"
+                 BackgroundColor="AliceBlue"
+                 />
+        <BoxView Grid.Row="0"
+                 Grid.Column="1"
+                 BackgroundColor="Red"
+                 />
+        <BoxView Grid.Row="0"
+                 Grid.Column="2"
+                 BackgroundColor="Blue"
+                 />
+        
+        <BoxView Grid.Row="1"
+                 Grid.Column="0"
+                 BackgroundColor="Cyan"
+                 />
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 BackgroundColor="Gray"
+                 />
+        <BoxView Grid.Row="1"
+                 Grid.Column="2"
+                 BackgroundColor="Magenta"
+                 />
+
+        <BoxView Grid.Row="2"
+                 Grid.Column="0"
+                 BackgroundColor="Wheat"
+                 />
+        <BoxView Grid.Row="2"
+                 Grid.Column="1"
+                 BackgroundColor="BlueViolet"
+                 />
+        <BoxView Grid.Row="2"
+                 Grid.Column="2"
+                 BackgroundColor="Pink"
+                 />
+
+        <BoxView Grid.Row="3"
+                 Grid.Column="0"
+                 BackgroundColor="Wheat"
+                 />
+        <BoxView Grid.Row="3"
+                 Grid.Column="1"
+                 BackgroundColor="BlueViolet"
+                 />
+        <BoxView Grid.Row="3"
+                 Grid.Column="2"
+                 BackgroundColor="Pink"
+                 />
+        <Button x:Name="btn1"
+                Text="Test"
+                Clicked="btn1_Clicked_1"
+                Grid.Row="4"
+                Grid.ColumnSpan="3"
+                HeightRequest="50"
+                
+                />
+
+        <Button x:Name="btn2"
+                Text="Test"
+                Clicked="btn2_Clicked"
+                Grid.Row="5"
+                Grid.ColumnSpan="3"
+                HeightRequest="50"
+                
+                />
+
+        <Button x:Name="btn3"
+                Text="View"
+                Clicked="btn3_Clicked"
+                Grid.Row="6"
+                Grid.ColumnSpan="3"
+                HeightRequest="50" />
+    </Grid>
+
+</ContentPage>
